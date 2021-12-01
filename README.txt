@@ -23,13 +23,13 @@ Musicalog Notes
 
 The first allows you to specifiy whether or not the entire relational object-graph should be retrieved, or, if this isn't required the query can be optimised by setting it to false.
 
-The second is a keypair string dictionary which can be used to specify filters, in this casse we're only using a combination of Album Title and Artist Name, however this allows for additional filters to be added in the future.
+The second is a keypair string dictionary which can be used to specify filters, in this case we're only using a combination of Album Title and Artist Name, however this allows for additional filters to be added in the future.
 
 NOTE: The dictionary is sent in Json format as the request body of the GET request, this is not entirely compliant with the recommendations in RFC 2616 section 4.3 (https://www.rfc-editor.org/rfc/rfc2616#section-4.3).
 
 > Extensive use has been made of the async/await pattern where appropriate, also generics to reduce the code-base and the dependency-injection model for instantiation.
 
->The various abstration layers are as folllows:
+> The various abstration layers are as follows:
 
 	> Database
 	> Repository / Model
