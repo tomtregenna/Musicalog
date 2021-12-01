@@ -21,7 +21,7 @@ Musicalog Notes
 
 > On the Get() endpoints for Albums and Artists there are two parameters...
 
-The first allows you to specifiy whether or not the entire relational object-graph should be retrieved, or, if this isn't required the query can the optimised by setting the to false.
+The first allows you to specifiy whether or not the entire relational object-graph should be retrieved, or, if this isn't required the query can be optimised by setting it to false.
 
 The second is a keypair string dictionary which can be used to specify filters, in this casse we're only using a combination of Album Title and Artist Name, however this allows for additional filters to be added in the future.
 
@@ -37,4 +37,4 @@ NOTE: The dictionary is sent in Json format as the request body of the GET reque
 	> Controller (API)
 	> Client
 
-Thanks you.
+Thank you.
