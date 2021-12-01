@@ -1,0 +1,19 @@
+﻿<form action="~/Albums/Index" method="Post">
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" id="Title" name="Title" placeholder="Album Title">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" id="Artist" name="Artist" placeholder="Artist's Name">
+            </div>
+            <div class="col">
+                <button type="submit" class="btn btn-primary">Search Albums</button>
+            </div>
+        </div>
+    </div>
+
+</form>
+
+@Html.ActionLink("View Artists", "Index", "Artists", new { @class = "btn btn-primary" })

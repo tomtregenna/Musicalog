@@ -1,0 +1,49 @@
+﻿@using MusicalogWeb.Models.MusicalogAPI
+
+@{
+    var artist = (ViewData["artist"] as Artist);
+
+    if (artist != null)
+    {
+        <div>
+            <h2>@artist.Name</h2> <h4>@Html.ActionLink("Delete (removes associated Albums)", "Delete", "Artists", new { Id  = artist.Id })</h4>
+
+            <br />
+
+            <h3>Albums by this Artist</h3>
+
+            <br />
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Format</th>
+                        <th scope="col">Stock</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var album in artist.Albums)
+                    {
+                        <tr>
+                            <th scope="row">
+                                @Html.ActionLink(album.Title, "Album", "Albums", new { Id  = album.Id })
+                            </th>
+                            <td>
+                                @album.FormatIdNavigation.Name
+                            </td>
+                            <td>
+                                @album.Stock
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <span>Artist could not be found</span>
+    }
+}
+

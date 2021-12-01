@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Albums View";
+}
+
+@model AlbumsViewModel
+
+<div>
+
+    @if (Model.Albums.Count > 0)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Artist</th>
+                    <th scope="col">Format</th>
+                    <th scope="col">Stock</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var album in Model.Albums)
+                {
+                    <tr>
+                        <th scope="row">
+                            @Html.ActionLink(@album.Title, "Album", "Albums", new { Id  = album.Id })
+                        </th>
+                        <td>
+                            @Html.ActionLink(album.Artist.Name, "Artist", "Artists", new { Id  = album.Artist.Id })
+                        </td>
+                        <td>
+                            @Model.Formats.Single(f => f.Id == album.FormatId).Name
+                        </td>
+                        <td>
+                            @album.Stock
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", "Albums", new { Id  = album.Artist.Id })
+                        </td>
+                        <td>
+                            @Html.ActionLink("Delete", "Delete", "Albums", new { Id  = album.Artist.Id })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>There were no results.</p>
+    }        
+</div>

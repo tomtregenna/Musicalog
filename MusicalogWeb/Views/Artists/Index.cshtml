@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Artists View";
+}
+
+@model ArtistsViewModel
+
+<div>
+
+@if (Model.Artists.Count > 0)
+{
+    <div class="accordion accordion-flush" id="artists">
+        @foreach (var artist in Model.Artists)
+        {
+            <div class="accordion-item">
+
+                <h2 class="accordion-header" id="head-@artist.Id">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-@artist.Id">
+                        <strong>@artist.Name (@artist.Albums.Count)</strong>
+                    </button>
+                </h2>
+
+                <div id="collapse-@artist.Id" class="accordion-collapse collapse" data-bs-parent="#artists">
+                    <div class="accordion-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var album in artist.Albums)
+                                {
+                                    <tr>
+                                        <th scope="row">
+                                            @Html.ActionLink(album.Title, "Album", "Albums", new { Id  = album.Id })
+                                        </th>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <p>There were no results.</p>
+}        
+
+</div>
+
+<script>
+
+    $(document).ready(function () {
+        $(".accordion").accordion();
+    });
+
+</script>

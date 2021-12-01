@@ -1,0 +1,20 @@
+﻿@model AlbumsViewModel
+
+@if (Model.RemovedAlbum != null)
+{
+    <div class="alert alert-success" role="alert">
+        The Album '@Model.RemovedAlbum.Title' has been deleted successfully!
+    </div>
+
+    <br />
+}
+else
+{
+    <div class="alert alert-danger" role="alert">
+        The Album could not be deleted.
+    </div>
+
+    <br />
+}
+
+<h3>@Html.ActionLink("Return to Album List", "Index", "Albums")</h3>

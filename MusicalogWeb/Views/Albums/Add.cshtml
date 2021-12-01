@@ -1,0 +1,57 @@
+﻿@model AlbumsViewModel
+
+@if (Model.RedirectFromAction)
+{
+    if (Model.NewAlbum != null)
+    {
+        <div class="alert alert-success" role="alert">
+            The Album '@Model.NewAlbum.Title' has been created successfully!
+        </div>
+
+        <br />
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">
+            The Album could not be created.
+        </div>
+
+        <br />
+    }
+}
+
+<form action="~/Albums/Add" method="Post">
+
+    <div class="mb-3">
+        <label for="title" class="form-label">Album Title</label>
+        <input type="text" class="form-control" id="title" name="Title">
+    </div>
+
+    <label for="artist" class="form-label">Artist's Name</label>
+    <div class="input-group mb-3">
+        <select class="form-select" id="artistdd" name="ArtistDD">
+            @foreach(var artist in Model.Artists.OrderBy(a => a.Name)) {
+                <option value="@artist.Id">@artist.Name</option>
+            }
+        </select>
+        <span class="input-group-text">or</span>
+        <input type="text" class="form-control" id="artist" name="Artist" placeholder="Add a new one (overrides selection)">
+    </div>
+
+    <label for="format" class="form-label">Album Format</label>
+    <div class="mb-3">
+        <select class="form-select" id="format" name="Format">
+            @foreach(var format in Model.Formats.OrderBy(a => a.Name)) {
+                <option value="@format.Id">@format.Name</option>
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label for="stock" class="form-label">Available Stock</label>
+        <input type="text" class="form-control" id="stock" name="Stock">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>

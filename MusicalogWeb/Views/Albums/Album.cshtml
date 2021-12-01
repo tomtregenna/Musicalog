@@ -1,0 +1,25 @@
+﻿@using MusicalogWeb.Models.MusicalogAPI
+
+@{
+    var album = (ViewData["album"] as Album);
+
+    if (album != null)
+    {
+        <div>
+            <form action="~/Albums/Delete/@album.Id" method="Post">
+                <button type="submit" class="btn btn-primary">Delete</button>
+            </form>
+            <br />
+
+            <h3>Artist: @Html.ActionLink(album.Artist.Name, "Artist", "Artists", new { Id  = album.Artist.Id })</h3>
+
+            <br />
+
+        </div>
+    }
+    else
+    {
+        <span>Album could not be found</span>
+    }
+}
+
