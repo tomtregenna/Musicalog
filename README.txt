@@ -9,11 +9,11 @@ Musicalog Notes
 
 > I added a web front-end project to demonstrate the use of the API, however this is not exhaustative and since it's not in scope I decided to leave it incomplete but available.
 
-> If you 'run' aat the solution level both the API and Web projects should start in the correctt order.
+> If you 'run' at the solution level both the API and Web projects should start in the correctt order.
 
 > The endpoints can be tested using the built-in swagger web interface
 
-> I did not make provisions for Albums which might be collaborations betyween multiple artists, although the was considered, instead a new Artist should be created. To implement this I would have had to normalise the resuilting manmy-to-many relationship with and additional table.
+> I did not make provisions for Albums which might be collaborations between multiple artists, although the was considered, instead a new Artist should be created. To implement this I would have had to normalise the resuilting many-to-many relationship with and additional table.
 
 > Deleting an Artist with cascade-delete all associate Albums, this does not apply in reverse.
 
