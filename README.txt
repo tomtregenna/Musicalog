@@ -1,7 +1,7 @@
 Musicalog Notes
 ---------------
 
-> The projects are .Net 6, created in Visual Studio 2022.
+> The projects are .Net 6, created in Visual Studio 2022. The database was created in SQL Server 2019.
 
 > There is a backup of the database in the 'Additional' folder, the database has a built-in administrator 'MusicalogUser', password: 'password'.
 
