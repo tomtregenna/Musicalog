@@ -9,7 +9,9 @@ Musicalog Notes
 
 > I added a web front-end project to demonstrate the use of the API, however this is not exhaustative and since it's not in scope I decided to leave it incomplete but available.
 
-> If you 'run' at the solution level both the API and Web projects should start in the correctt order.
+> If you 'run' at the solution level both the API and Web projects should start in the correct order.
+
+> Unlike with MVC the Insert, Update and Delete Controller methods do not directly accept CLR objects bbut rather Json in the request body, this is by design and intended to make the API more accessible to non-dotnet clients.
 
 > The endpoints can be tested using the built-in swagger web interface
 
